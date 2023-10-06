@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cueBall != null && isTakingShot)
+        if (cueBall != null && !isTakingShot)
         {
             horizontalInput = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
 
@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour
             }
             else if (isTakingShot)
             {
-                if (saveMousePosition + Input.GetAxis("Mouse y") <= 0)
+                if (saveMousePosition + Input.GetAxis("Mouse Y") <= 0)
                 {
                     saveMousePosition += Input.GetAxis("Mouse Y");
                     if (saveMousePosition <= maxDrawDistance)
